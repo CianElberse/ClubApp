@@ -1,8 +1,8 @@
 <template>
   <Nav />
 
-  <div class="container-sm mt-20">
-    <div class="mx-5">
+  <div>
+    <div>
       <Message
           v-for="{ id, text, userPhotoURL, userName, userId } in messages"
           :key="id"
@@ -18,7 +18,7 @@
   <div ref="bottom" class="mt-20" />
 
   <div class="bottom">
-    <div class="container-sm">
+    <div>
       <form v-if="isLogin" @submit.prevent="send">
         <input v-model="message" placeholder="Message" required />
         <button type="submit">Send

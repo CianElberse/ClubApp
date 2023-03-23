@@ -8,6 +8,7 @@ const CreateEvent = () => import('./pages/CreateEvent.vue')
 const EditEvent = () => import('./pages/EditEvent.vue')
 
 
+
 export default [
     {
         path: '/',
@@ -18,7 +19,6 @@ export default [
         path: '/clubs/:id',
         name: 'club',
         component: Club,
-        props: true,
     },
     {
         path: '/create',

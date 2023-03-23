@@ -15,6 +15,11 @@
       <input v-model="form.Location" type="text" required>
     </label>
    <br>
+    <label>
+      Date:
+      <Datepicker v-model="form.picked" placeholder="Enter date" />
+    </label>
+    <br>
     <button type="submit">Create Event</button>
   </form>
 </template>
@@ -23,16 +28,20 @@
 import { createEvent } from '@/firebase'
 import {reactive} from 'vue'
 import {useRoute, useRouter} from "vue-router";
+import Datepicker from 'vue3-datepicker'
+
 
 export default {
-
+  components: {Datepicker, VueTimepicker },
   setup() {
+
     const route = useRoute()
     const router = useRouter()
     const ClubId = route.params.id
-    const form = reactive({ Name: '', Description: '', Location: ''})
+    const form = reactive({ Name: '', Description: '', Location: '', picked: '', })
     const onSubmit = async () => {
-      await createEvent({ ...form,  ClubId})
+      const date = form.picked.toString().substring(0,15)
+      await createEvent({ ...form, ClubId, date })
       form.Name = ''
       form.Description = ''
       form.Location = ''

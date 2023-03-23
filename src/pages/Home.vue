@@ -25,15 +25,23 @@
     <router-link to="/create">Create new Club</router-link>
     <br>
   </div>
+  <VueDatePicker v-model="date"></VueDatePicker>
 </template>
 
 <script>
   import { useLoadClubs, deleteClub } from '@/firebase'
+
+
+
   export default {
   setup() {
   const clubs = useLoadClubs()
   return { clubs, deleteClub }
 }
 }
+
+
+
+
 </script>
 

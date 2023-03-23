@@ -3,11 +3,12 @@
     <h1> {{ club.clubName }} Events</h1>
     <table>
       <tbody>
-      <tr v-for="{ id, Name , Description , Location , ClubId } in events" >
+      <tr v-for="{ id, Name , Description , Location , ClubId, date } in events" >
         <div  v-if="ClubId===clubId">
         <td >{{ Name }}</td>
         <td>{{ Description }}</td>
         <td>{{ Location }}</td>
+          <td>{{ date }}</td>
         <td>
           <router-link :to="`/editEvent/${id}/`+ clubId ">
             <button>

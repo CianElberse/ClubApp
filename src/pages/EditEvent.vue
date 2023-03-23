@@ -7,23 +7,33 @@
         <input v-model="form.Name"  required />
       </div>
 
-      <div class="form-group mt-3">
+      <div>
         <label>Description</label>
         <input
             v-model="form.Description"
-            type="description"
+            type="text"
             required
         />
       </div>
 
-      <div class="form-group mt-3">
+      <div>
         <label>Location</label>
         <input
             v-model="form.Location"
-            type="location"
+            type="text"
             required
         />
       </div>
+
+      <div>
+        <label>Date</label>
+        <Datepicker
+            v-model="form.picked"
+            placeholder="Update date"
+            required
+        />
+      </div>
+
 
       <button type="submit" >
         Update
@@ -36,15 +46,17 @@
 import { reactive, computed, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getEvent, updateEvent } from '@/firebase'
+import Datepicker from 'vue3-datepicker'
 
 export default {
+  components: {Datepicker },
   setup() {
     const router = useRouter()
     const route = useRoute()
     const eventId = computed(() => route.params.id)
     const ClubId = route.params.cId
 
-    const form = reactive({ Name: '', Description: '', Location: ''  })
+    const form = reactive({ Name: '', Description: '', Location: '', picked:'' })
     onMounted(async () => {
       const event = await getEvent(eventId.value)
       form.Name = event.Name
@@ -53,7 +65,8 @@ export default {
     })
 
     const update = async () => {
-      await updateEvent(eventId.value, { ...form })
+      const date = form.picked.toString().substring(0,15)
+      await updateEvent(eventId.value, { ...form, date })
       form.Name = ''
       form.Description = ''
       form.Location =''
