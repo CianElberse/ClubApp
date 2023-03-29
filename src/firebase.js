@@ -4,7 +4,7 @@ import 'firebase/compat/firestore';
 
 import Filter from 'bad-words';
 import { ref, onUnmounted, computed } from 'vue';
-import message from "@/pages/components/Message.vue";
+
 
 firebase.initializeApp({
     apiKey: "AIzaSyCDqlWfdu7dwl41KP1T0_92odKYBqd2Ht4",

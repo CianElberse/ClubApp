@@ -7,8 +7,6 @@ const Edit = () => import('./pages/EditClub.vue')
 const CreateEvent = () => import('./pages/CreateEvent.vue')
 const EditEvent = () => import('./pages/EditEvent.vue')
 
-
-
 export default [
     {
         path: '/',

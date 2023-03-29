@@ -5,14 +5,18 @@
 
       <div v-if="isLogin" class="login">
         <Avatar :src="user.photoURL" />
-        <button class="text-gray-400 hover:text-white" @click="signOut">
+        <button  @click="signOut">
           Sign Out
         </button>
       </div>
 
-      <button v-else class="bg-green-500 hover:bg-green-600" @click="signIn">
+      <button v-else @click="signIn">
         Sign in
       </button>
+      <br>
+      <router-link :to="'/clubs/' + clubId">
+        {{ club.clubName}} page
+      </router-link>
     </div>
   </nav>
 </template>
@@ -35,7 +39,7 @@ export default {
       club.value = await getClub(clubId.value)
     })
 
-    return { user, isLogin, signOut, signIn, club }
+    return { user, isLogin, signOut, signIn, club, clubId }
   }
 }
 </script>

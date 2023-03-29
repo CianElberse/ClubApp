@@ -22,6 +22,8 @@
     <br>
     <button type="submit">Create Event</button>
   </form>
+
+
 </template>
 
 <script>
@@ -32,7 +34,7 @@ import Datepicker from 'vue3-datepicker'
 
 
 export default {
-  components: {Datepicker, VueTimepicker },
+  components: {Datepicker  },
   setup() {
 
     const route = useRoute()

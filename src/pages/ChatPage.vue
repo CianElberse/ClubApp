@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div ref="bottom" class="mt-20" />
+  <div ref="bottom"  />
 
   <div class="bottom">
     <div>

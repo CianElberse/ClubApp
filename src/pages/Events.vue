@@ -25,6 +25,9 @@
     </table>
     <router-link :to=" '/createEvent/' + clubId ">Create new Event</router-link>
     <br>
+    <router-link :to="'/clubs/' + clubId">
+      {{ club.clubName }} page
+    </router-link>
   </div>
 </template>
 
