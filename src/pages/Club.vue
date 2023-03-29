@@ -6,6 +6,8 @@
     <router-link :to="'/clubs/' + clubId + '/event'">Events</router-link>
     <br>
     <router-link :to="'/clubs/' + clubId + '/chat'">Chat</router-link>
+    <br>
+    <router-link :to="'/'">Home</router-link>
   </div>
 </template>
 
