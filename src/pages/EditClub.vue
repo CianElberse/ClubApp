@@ -2,12 +2,12 @@
   <div>
     <h3>Edit Clubs</h3>
     <form @submit.prevent="update">
-      <div class="form-group">
+      <div>
         <label>Name</label>
         <input v-model="form.clubName"  required />
       </div>
 
-      <div class="form-group mt-3">
+      <div>
         <label>Description</label>
         <input
             v-model="form.clubDescription"

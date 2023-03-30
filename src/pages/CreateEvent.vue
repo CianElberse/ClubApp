@@ -23,7 +23,6 @@
     <button type="submit">Create Event</button>
   </form>
 
-
 </template>
 
 <script>

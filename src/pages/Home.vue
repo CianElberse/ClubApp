@@ -31,8 +31,6 @@
 <script>
   import { useLoadClubs, deleteClub } from '@/firebase'
 
-
-
   export default {
   setup() {
   const clubs = useLoadClubs()
